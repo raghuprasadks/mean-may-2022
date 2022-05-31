@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Types</title>
+</head>
+<body>
+    <h1>Demonstration of input types</h1>
+    
+    <input type="text" name="fullname" id="fullname" placeholder="Enter Name" disabled><br>
+    <label>Sex</label> <br>
+    Male :<input type="radio" name="sex" id="male" checked>
+    Female :<input type="radio" name="sex" id="female">
+
+    <label>Qualification</label> <br>
+    UG :<input type="checkbox" name="ug" id="ug" checked>
+    PG :<input type="checkbox" name="pg" id="pg">
+    Others :<input type="checkbox" name="oth" id="oth">
+    <br>
+    <label>Location</label> <br>
+    <select name="loc" id="loc" multiple>
+        <option value="bng">Bengaluru</option>
+        <option value="chn">Chennai</option>
+        <option value="hyd">Hyderabad</option>
+    </select>
+    <br>
+    <label for="">Choose Country</label>
+    <input list="countries" id="country" name = "country" >
+    <datalist id="countries">
+        <option>India</option>
+        <option>China</option>
+        <option>USA</option>
+    </datalist>
+    <br>
+    <label for="remarks">Enter Remarks</label><br>
+    <textarea id="remarks" rows="10" cols="10"></textarea><br>
+    <label for="dob">Enter Date and Time of birth</label><br>
+    <input type="datetime-local" name="dob" id="dob"><br>
+    <input type="range" name="amt" id="amt" min="1000" max="10000"><br>
+    <label>Select File</label>
+    
+    <input type="file" name="file" id="file">
+</body>
+</html>

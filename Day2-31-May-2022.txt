@@ -1,0 +1,11 @@
+Agenda:
+Web Application Architecture
+HTML - Basic html structure
+form 
+input type elements - radio buttons,checkboxes
+dropdowns
+input type attributes
+link,table,list,frames
+google map,youtube video,audio/video
+div
+CSS
