@@ -1,0 +1,36 @@
+1. What is a program ?
+Set of instruction to perform some task
+Input,process,output
+2. Computers can understand 0 and 1
+Assembly programming
+Programming
+Compilers/Interpreters
+C/Java
+3. Develop Applications
+System Software
+a. Operating System,device
+Driver
+b. Application sofware
+Windows based application
+Webbased Applications
+Mobile Applications
+
+Webbased Applications
+irctc
+bookmyshow
+Software Development Life Cycle(SDLC)
+
+Web - HTML/CSS/JavaScript
+
+Request
+1. Visual studio code
+2. Node.js
+3. postman
+4. mongodb
+
+3921
+1699
+
+
+
+

@@ -1,0 +1,16 @@
+1. Write a function 
+to calculate Simple Interest using
+python.
+This function should return the 
+calculated amount.
+It should take principal,rate and time
+as input
+2. Write a program to create
+sign up form using html having
+following fields
+Name
+Email
+Mobile
+Gender : Radio button : Male and Female
+Location
+<Submit>
