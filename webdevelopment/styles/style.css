@@ -8,3 +8,7 @@ h1{
 h2{
     text-align: center;
 }
+
+input{
+    background-color: red;
+}
