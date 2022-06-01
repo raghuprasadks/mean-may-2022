@@ -1,0 +1,7 @@
+Agenda:
+CSS - table,div,li,text,images,
+border box,float,display
+icons,responsive web design,media queries
+Introduction to java script
+
+Logos - https://www.youtube.com/watch?v=-7M3AMBY-ZQ

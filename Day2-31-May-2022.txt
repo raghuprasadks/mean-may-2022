@@ -8,4 +8,8 @@ input type attributes
 link,table,list,frames
 google map,youtube video,audio/video
 div
-CSS
+CSS- Different types - inline,internal,external
+id,class
+div
+border,padding,margin
+images
