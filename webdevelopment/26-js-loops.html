@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+</head>
+<body>
+
+    <h1>Loops</h1>
+    <script>
+        console.log("while loop to print 2's table")
+        start = 2
+        end = 20
+        while (start <= end){
+            console.log(start)
+            start += 2
+        }
+
+        console.log("for loop to print 2's table")
+
+        for (i=2;i<=20;i=i+2){
+            console.log(i)
+        }
+
+
+        console.log("do while loop to print 5's table")
+        start = 5
+        end = 50
+
+        do{
+            console.log(start)
+            start += 5
+
+        }while (start <= end);
+       
+        console.log("Break loop at 10 while print 2's table")
+
+        for (i=2;i<=20;i=i+2){
+            if (i==10)
+                break
+            console.log(i)
+        }
+
+        console.log("Contine loop at 10 while print 2's table")
+
+        for (i=2;i<=20;i=i+2){
+            if (i==10)
+                continue
+            console.log(i)
+        }
+    </script>
+</body>
+</html>
