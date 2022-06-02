@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    <h1>Arrays Demo</h1>
+    <script>
+        console.log('Arrays demo')
+        runs = [20,30,0,55,29]
+        runs.push(50)
+        runs.push('sixty')
+
+        console.log('runs array '+runs)
+        runs[6]=60
+        console.log('runs array:after update '+runs)
+
+        runs.pop()
+        console.log('runs array:after pop '+runs)
+
+        console.log('fruits')
+        fruits = []
+        fruits.push("Guava")
+        fruits.push("Apple")
+        fruits.push("Banana")
+        fruits.push("Mango")
+
+        for (i=0;i<fruits.length;i++)
+        {
+            console.log(fruits[i])
+        }
+
+        console.log('for in loop ')
+
+        for (fruit of fruits){
+            console.log(fruit)
+        }
+        fruits.sort()
+
+        console.log('after sorting  in ascending order '+fruits)
+        fruits.reverse()
+        console.log('after sorting  in descending order '+fruits)
+
+        index = fruits.indexOf('Apple')
+        console.log('index of '+index)
+        fruits.unshift("Pine Apple")
+        console.log('unshift - adding at the beginning '+fruits)
+        fruits.shift()
+        console.log('shift - removing from  the beginning '+fruits)
+    </script>
+</body>
+</html>
