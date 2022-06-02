@@ -1,0 +1,16 @@
+1. Write a java script program to
+calculate discount and net amount 
+to pay based on following advertisement
+by an ecommerce company.
+
+purchare amount <=10000
+discount = 10 %
+purchare amount >10000 and  purchare amount <=20000
+discount = 20 %
+purchare amount >20000 and  purchare amount <=30000
+discount = 30 %
+purchare amount >30000
+discount = 35 %
+
+
+
