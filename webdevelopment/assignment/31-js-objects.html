@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+
+    <h1>Objects</h1>
+
+    <script>
+        emp={
+            code:1,
+            fname:"Ravi",
+            lname:"Kumar",
+            dept:"IT",
+            desg:"Software Engineer",
+            sal:40000,
+            fullname:function (){
+                return this.fname +this.lname;
+            }           
+        }
+        console.log("Employee "+emp)
+        console.log("Employee:Dept "+emp.dept)
+        console.log("Employee:Desg "+emp['desg'])
+        console.log("Employee:fullname "+emp.fullname())
+
+        persons = [            
+        {
+            firstname:"rakesh",
+            lastname:"kumar"
+        },
+        {
+            firstname:"Rashmi",
+            lastname:"Prasad"
+        },
+        {
+            firstname:"Suresh",
+            lastname:"Reddy"
+        }    
+    ]
+
+    for (i=0;i<persons.length;i++){
+        firstname = persons[i].firstname
+        console.log("first name "+firstname);
+    }
+    </script>
+</body>
+</html>

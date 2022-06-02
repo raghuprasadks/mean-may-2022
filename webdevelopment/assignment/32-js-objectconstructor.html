@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object constructors</title>
+</head>
+<body>
+
+    <h1>Object Constructors</h1>
+
+    <script>
+
+        console.log('Employee object constructor')
+        employee=function (code,name,dept,sal){
+            this.code = code;
+            this.name = name;
+            this.dept = dept;
+            this.sal = sal;
+        }
+
+        emp1 = new employee(1,"Ravi","IT",400000)
+        emp2 = new employee(2,"Akash","Accounts",500000)
+        emp3 = new employee(3,"Ganesh","HR",600000)
+
+        console.log('Adding Employee object to an array')
+        emparray = []
+        emparray.push(emp1)
+        emparray.push(emp2)
+        emparray.push(emp3)
+        console.log('Looping through Employee array')
+
+        totalsal = 0
+        for (i = 0;i<emparray.length;i++){
+            info = "Name : " +emparray[i].name + " Dept : "+emparray[i].name +" Sal :"+emparray[i].sal; 
+            totalsal = totalsal +emparray[i].sal
+            console.log(info)     
+        }
+        console.log('Total salary : '+totalsal)
+    </script>    
+</body>
+</html>
