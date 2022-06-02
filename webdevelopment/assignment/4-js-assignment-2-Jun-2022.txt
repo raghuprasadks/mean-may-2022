@@ -12,5 +12,19 @@ discount = 30 %
 purchare amount >30000
 discount = 35 %
 
+2. Electricity bill payment
+Units consumed <=100 - Pay 1 Rs/Unit
+Units consumed >100 && <=200 - Pay 2 Rs/Unit
+Units consumed >200 && <=300 - Pay 3 Rs/Unit
+Units consumed >300 - Pay 5 Rs/Unit
+
+Calculation is cumulative
+Sample calculation 
+50 units - 50 X 1 = 50
+150 units - 100 X 1 + 50 X 2 = 200
+
+
+
+
 
 
