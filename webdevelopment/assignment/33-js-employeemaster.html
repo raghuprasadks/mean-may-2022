@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Master</title>
+</head>
+<body>
+
+    <h1>Register Employees</h1>
+
+    <input type="text" name="code" id="code" placeholder="Enter Employee Code"><br>
+    <input type="text" name="name" id="name" placeholder="Enter Employee Name"><br>
+    <input type="text" name="dept" id="dept" placeholder="Enter Employee Department"><br>
+    <input type="text" name="sal" id="sal" placeholder="Enter Employee Salary"><br>
+    <button onclick="addEmployee()">Add Employee</button>
+    <button onclick="listEmployee()">List Employee</button><br>
+
+    <table id="employee"></table>
+
+    <script>
+        function employee(code,name,dept,sal){
+
+            this.code = code;
+            this.name = name;
+            this.dept = dept;
+            this.sal = sal;
+        }
+
+        emparray = []
+
+        function addEmployee(){
+            code = document.getElementById("code").value;
+            name = document.getElementById("name").value;
+            dept = document.getElementById("dept").value;
+            sal = document.getElementById("sal").value;
+
+            emp = new employee(code,name,dept,sal)
+            emparray.push(emp)
+
+            console.log(emparray)
+
+        }
+
+        function listEmployee(){
+
+            data = "<tr><th>Code</th><th>Name</th><th>Department</th><th>Salary</th><tr>"
+            for (i = 0;i<emparray.length;i++){
+                emp = emparray[i]
+                data = data +"<tr><td>"+emp.code+"</td><td>"+emp.name+"</td><td>"+emp.dept+"</td><td>"+emp.sal+"</th><tr>"
+            }
+
+            document.getElementById("employee").innerHTML = data
+        }
+
+    </script>
+
+
+
+
+
+
+
+    
+</body>
+</html>
