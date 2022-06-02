@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eShopping</title>
+</head>
+<body>
+    <h1>eShopping</h1>
+    <script>
+        purcharse_amt=20000
+        discount_rate = 0
+        discount_amt = 0
+        net_amount = 0
+        if (purcharse_amt <=10000){
+            discount_rate = 10
+        } else if (purcharse_amt >10000 && purcharse_amt <=20000){
+            discount_rate = 20
+        } else if (purcharse_amt >20000 && purcharse_amt <=30000){
+            discount_rate = 30
+        } else{
+            discount_rate = 35
+        }
+        discount_amt = (purcharse_amt*discount_rate)/100
+        net_amount = purcharse_amt -discount_amt
+        console.log("purchase amount "+purcharse_amt)
+        console.log("net amount "+net_amount)
+        console.log("discount amount "+discount_amt)
+    </script>
+</body>
+</html>
