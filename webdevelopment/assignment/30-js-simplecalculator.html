@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+</head>
+<body>
+
+    <h1>Simple Calculator</h1>
+
+    <label for="firstnumber">Enter First Number</label><br>
+    <input type="number" name="firstnumber" id="firstnumber"><br>
+    <label for="oper">Enter Operator (+,-,*,/)</label><br>
+    <input type="text" name="oper" id="oper"><br>
+    <label for="secondnumber">Enter Second Number</label><br>
+    <input type="number" name="secondnumber" id="secondnumber"><br>
+    <button onclick="calculate()">Calculate</button><br>
+
+    <h1 id="result"></h1>
+
+    <script>
+
+        function calculate(){
+
+            //alert("Inside calculate")
+
+            n1 = parseInt(document.getElementById("firstnumber").value);
+            oper = document.getElementById("oper").value;
+            n2 = parseInt(document.getElementById("secondnumber").value);
+
+            if (oper=='+'){
+                result = n1+n2
+            } else if (oper=='-'){
+                result = n1-n2
+            } else if (oper=='*'){
+                result = n1*n2
+            }else if (oper=='/'){
+                result = n1/n2
+            } else{
+                result="Invalid operation"
+            }
+            document.getElementById("result").innerHTML=result            
+        }
+    </script>    
+</body>
+</html>
