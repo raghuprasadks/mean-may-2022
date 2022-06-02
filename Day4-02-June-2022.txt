@@ -1,0 +1,31 @@
+Java Script
+
+Request for GIT
+
+Web Application Development
+HTML
+CSS
+Java Script
+v8
+node.js
+Interpreted
+
+Syntax
+1. Datatypes
+2. Operators
+3. Loops
+4. Conditional statements
+5. Functions
+6. Objects
+7. Array
+8. String 
+9. html/css/javascript - Dom manipulation
+10. Higher order functions - filter,map,reduce
+11. Array functions - arrow functions
+Object based programming language
+Type script super set of java script
+object oriented
+Angalurjs - 1.8 
+angular 2 +
+Saturday test - html,css,javascript - mcq + programming
+

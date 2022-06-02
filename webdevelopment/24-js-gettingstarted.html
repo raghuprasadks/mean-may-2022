@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script Getting Started</title>
+</head>
+<body>
+
+    <h1>Java Script Getting started</h1>
+
+    <script>
+
+        // Define variable
+        /**
+         *  Basic data types - string,number,boolean
+         * 
+         * */
+        course = "MEAN";
+        console.log(" course "+course);
+        console.log('Data type of course '+typeof(course))
+
+        duration = 18;
+        console.log(" duration "+duration);
+        console.log('Data type of duration '+typeof(duration))
+        duration = '18'
+        console.log('Data type of duration aftet update '+typeof(duration))
+
+        version = 1.8;
+        console.log('Data type of version '+typeof(version))
+
+        areYouAnEmployee = true
+
+        console.log('Data type of areYouAnEmployee '+typeof(areYouAnEmployee))
+
+       // Object
+
+       employee={code:1,name:'ravi',dept:'IT',designation:'JE',sal:400000}
+       console.log('employee '+employee)
+       console.log('Data type of employee '+typeof(employee))
+       console.log('employee name '+employee.name)
+
+       scores = [4,5,19,25]
+       console.log('scores '+scores)
+       console.log('Data type of scores '+typeof(scores))
+       console.log('Element at zero '+scores[0])
+
+       function greet(){
+           console.log('Welcome to MEAN stack')
+       }
+
+       greet()
+
+       var sum = function (n1,n2){
+           return n1+n2
+       }
+
+       total = sum(100,200)
+       console.log('sum is '+total)
+
+       console.log('type of sum '+typeof(sum))
+
+    </script>
+    
+</body>
+</html>
