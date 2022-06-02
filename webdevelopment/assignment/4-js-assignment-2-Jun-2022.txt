@@ -23,6 +23,11 @@ Sample calculation
 50 units - 50 X 1 = 50
 150 units - 100 X 1 + 50 X 2 = 200
 
+3. Design and code for a program to convert 
+temperature from Fahrenheit to Celcius
+
+
+
 
 
 
