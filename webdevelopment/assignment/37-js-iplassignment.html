@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Assignment</title>
+</head>
+<body>
+
+    <h1>IPL Assignment</h1>
+
+    <script>
+
+        function ipl(name,team,season,runs,wickets){
+            this.name=name
+            this.team = team
+            this.season = season
+            this.runs = runs
+            this.wickets = wickets
+        }
+
+        player1 = new ipl("Dhoni","CSK",2019,500,0)
+        player2 = new ipl("Dhoni","CSK",2019,600,0)
+        player3 = new ipl("Jadeja","CSK",2019,400,10)
+        player4 = new ipl("Jadeja","CSK",2021,450,12)
+        player5 = new ipl("Virat","RCB",2021,550,0)
+        player6 = new ipl("ABD","RCB",2020,555,0)
+        player7 = new ipl("Bumrah","MI",2020,55,14)
+
+        iplplayers=[]
+        iplplayers.push(player1)
+        iplplayers.push(player2)
+        iplplayers.push(player3)
+        iplplayers.push(player4)
+        iplplayers.push(player5)
+        iplplayers.push(player6)
+        iplplayers.push(player7)
+
+        highestscoreforallseason=0
+        highestrungetter = ''
+
+        for (i=0;i<iplplayers.length;i++){
+            player = iplplayers[i]
+            if (player.runs >highestscoreforallseason){
+                highestscoreforallseason = player.runs
+                highestrungetter =player.name
+            }
+        }
+        console.log("Highest scorer for all season is "+highestrungetter + " maximum runs"+highestscoreforallseason)
+    </script>
+    
+</body>
+</html>
