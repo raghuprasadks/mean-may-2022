@@ -1,0 +1,11 @@
+Java Script and AJAX
+
+tools/servers - postman / xampp
+Scope - let,var,const
+Arrow Functions
+Array methods
+Prototypes
+
+Asynchronous programming
+promise
+async await
