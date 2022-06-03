@@ -1,5 +1,20 @@
+First Assignment
 1. Fetch data from following url
 http://jsonplaceholder.typicode.com/users
 2. Display following data in a table
 
 name,city,phone,company name
+
+
+Second Assignment
+
+1. Fetch data from following url
+https://api.openweathermap.org/data/2.5/weather?q=<cityname>&appid=<apikey>
+2. Create UI to allow user to enter
+city
+3. Display the weather based on the city name
+City Name:
+Minimum Temp F :
+Maximum Temp F :
+Humidity :
+
