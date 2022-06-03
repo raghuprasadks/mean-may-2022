@@ -46,6 +46,18 @@
        console.log('marks array:foreachloop:with arrow function::second way ')
        marksupd = marks.forEach((v)=>console.log(v*2))
 
+       console.log('map')
+
+       mappedmarks = marks.map(v=>v*2)
+       console.log('marks after mapping'+mappedmarks)
+
+       filteredmarks = marks.filter(v=>v>15)
+       console.log('marks after filtering'+filteredmarks)
+       console.log('original marks'+marks)
+
+       total = marks.reduce((t,v)=>t+v)
+       console.log('total marks'+total)
+
        
     </script>
     

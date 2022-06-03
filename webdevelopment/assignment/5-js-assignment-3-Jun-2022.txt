@@ -1,0 +1,13 @@
+1. Write a java script program to
+complete following tasks.
+a. create following object constructor
+function ipl(name,team,season,runs,wickets)
+b. create minimum of 5 players from atleast
+two teams having both batsman and bowler
+c. create iplplayers array and add 5 players
+d. Find the player who has scored maximum
+runs for all seasons
+e. Find the player who has taken
+maximum wickets for all seasons
+f. Find the total runs scored by all
+players for a given season

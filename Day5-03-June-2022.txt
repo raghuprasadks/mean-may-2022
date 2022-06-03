@@ -3,7 +3,8 @@ Java Script and AJAX
 tools/servers - postman / xampp
 Scope - let,var,const
 Arrow Functions
-Array methods
+Array methods - 
+https://www.w3schools.com/js/js_array_iteration.asp
 String methods
 Date methods
 Prototypes
