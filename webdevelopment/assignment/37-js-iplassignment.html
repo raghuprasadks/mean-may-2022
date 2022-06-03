@@ -18,6 +18,9 @@
             this.season = season
             this.runs = runs
             this.wickets = wickets
+            this.info = function (){
+                return " Name : " +this.name +" Team :"+this.team +" Season "+this.season + " Runs : "+this.runs +" Wickets : "+this.wickets
+            }
         }
 
         player1 = new ipl("Dhoni","CSK",2019,500,0)
@@ -44,10 +47,45 @@
             player = iplplayers[i]
             if (player.runs >highestscoreforallseason){
                 highestscoreforallseason = player.runs
-                highestrungetter =player.name
+                //highestrungetter =player.name
+                highestrungetter =player.info()
             }
         }
+
+        
+
         console.log("Highest scorer for all season is "+highestrungetter + " maximum runs"+highestscoreforallseason)
+        console.log("using for each with arrrow function ")
+        iplplayers.forEach(player =>{
+            
+            if (player.runs >highestscoreforallseason){
+                highestscoreforallseason = player.runs
+                //highestrungetter =player.name
+                highestrungetter =player.info()
+            }
+        
+        })
+
+        console.log("Highest scorer for all season is: with forEach "+highestrungetter + " maximum runs"+highestscoreforallseason)
+
+        console.log("Highest run getter for a season:using filter")
+
+        season = 2021
+        highestscoreforaseason=0
+
+        iplplayers.filter(player =>{
+
+            if (player.season == season){
+            
+                if (player.runs >highestscoreforaseason){
+                    highestscoreforaseason = player.runs
+                
+                    highestrungetter =player.info()
+            }
+        }
+        
+        })
+        console.log("Highest scorer for the season  "+season +" is " +highestrungetter + " maximum runs"+highestscoreforaseason)
     </script>
     
 </body>
