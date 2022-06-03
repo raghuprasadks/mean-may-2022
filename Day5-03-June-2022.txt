@@ -4,6 +4,8 @@ tools/servers - postman / xampp
 Scope - let,var,const
 Arrow Functions
 Array methods
+String methods
+Date methods
 Prototypes
 
 Asynchronous programming
