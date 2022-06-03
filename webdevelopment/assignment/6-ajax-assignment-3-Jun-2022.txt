@@ -1,0 +1,5 @@
+1. Fetch data from following url
+http://jsonplaceholder.typicode.com/users
+2. Display following data in a table
+
+name,city,phone,company name
