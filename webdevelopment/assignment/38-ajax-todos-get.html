@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo's Get</title>
+<style>
+
+    table,td,th{
+        border: 2px solid blue;
+        padding: 3px;
+        margin: auto;
+        border-collapse: collapse;
+    }
+    h1{
+        text-align: center;
+    }
+</style>
+
+</head>
+<body onload="getTodos()">
+    <h1>Todo's</h1>
+    <table id="result"></table>
+    <script>
+        
+        function getTodos(){
+
+            fetch("http://jsonplaceholder.typicode.com/todos")
+            .then(resonponse=>resonponse.json())
+            .then(json=>displayTodos(json))
+        }
+
+        function displayTodos(todos){
+            info="<tr><th>Title</th></tr>"
+            todos.map(todo=>{
+
+                info = info +"<tr><td>"+todo.title+"</td></tr>"
+            })
+
+            document.getElementById("result").innerHTML=info
+
+        }
+    </script>
+    
+</body>
+</html>

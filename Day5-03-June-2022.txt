@@ -12,3 +12,36 @@ Prototypes
 Asynchronous programming
 promise
 async await
+
+java script object
+employee={
+code:1,
+name:"ravi"
+}
+
+json
+employee=[
+{
+"code":1,
+"name":"ravi"
+},
+{
+"code":2,
+"name":"rakesh"
+},
+
+API 
+http://jsonplaceholder.typicode.com/users
+<aadharwebsite>/aadharinfo
+
+url - http://jsonplaceholder.typicode.com/users
+
+
+fetch('https://jsonplaceholder.typicode.com/users')
+  .then(response => response.json())
+  .then(json => console.log(json))
+
+
+
+
+]
