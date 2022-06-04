@@ -55,12 +55,7 @@
         }
 
         function displayTodos(todos) {
-           // console.log("display todos ::")
-           // console.log(todos)
-           // console.log(todos.length)
             todosarray = todos
-            //console.log("todosarray::")
-            //console.log(todosarray.length)
             /**
             info = "<tr><th>Title</th></tr>"
             todos.map(todo => {
@@ -69,7 +64,7 @@
             })
             **/
             info = `<tr><th>Title</th></tr>`
-            todos.map(todo => {
+            todos.forEach(todo => {
 
                 info += `<tr><td> ${todo.title}</td></tr>`
             })
@@ -102,12 +97,11 @@
             })
                 .then(response => response.json())
                 // Displaying results to console
-                .then(json => todosarray.unshift(json));
-               // .catch(err=>console.log("error"))
-               //.then(json=>console.log(json));
-               //document.getElementById("result").innerHTML = " ";
-               //console.log("todosarray:: unshift:length")
-                displayTodos(todosarray)
+                .then(json => {
+                    todosarray.unshift(json)
+                    displayTodos(todosarray)
+                }
+                    );
                 document.getElementById("todo").value=" "
 
         }
