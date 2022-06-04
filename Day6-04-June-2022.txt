@@ -1,5 +1,4 @@
 Bootstrap,GIT and JQuery
-
 fetchAPI - post
 Java Script  - String functions
 
