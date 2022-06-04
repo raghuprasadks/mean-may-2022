@@ -1,0 +1,14 @@
+Bootstrap,GIT and JQuery
+
+fetchAPI - post
+Java Script  - String functions
+
+let li = `<tr><th>Name</th><th>Email</th></tr>`;
+       
+        // Loop through each data and add a table row
+        json.forEach(user => {
+            li += `<tr>
+                <td>${user.name} </td>
+                <td>${user.email}</td>        
+            </tr>`;
+        });
