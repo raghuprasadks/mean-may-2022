@@ -1,0 +1,33 @@
+Agenda:
+git Commands
+jquery
+angular
+
+Managing source code
+git
+continous development and delivery
+devops
+
+Local Repository and Remote Repository
+Step 1 - Open git hub
+https://github.com/
+Step 2 - Sign up
+Step 3 - Download git client
+https://git-scm.com/downloads
+ and install
+
+git commands
+
+git --version
+
+git clone https://github.com/raghuprasadks/mean-may-2022.git
+
+https://confluence.atlassian.com/fishkb/unable-to-clone-git-repository-due-to-self-signed-certificate-376838977.html
+
+git -c http.sslVerify=false clone <repository-name>
+
+git -c http.sslVerify=false clone https://github.com/raghuprasadks/mean-may-2022.git
+
+
+
+

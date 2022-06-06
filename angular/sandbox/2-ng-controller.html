@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Angular Controller</title>
+</head>
+<body>
+    <h1>Controller Demo</h1>
+
+    <div ng-app="myApp" ng-controller="myCtrl">
+
+
+        First Name : <input type="text" ng-model="firstName"><br>
+        Last Name : <input type="text" ng-model="lastName"><br>
+
+        <h1>Your Full Name is : {{firstName}} - {{lastName}}</h1>
+
+
+    </div>
+    <script>
+
+        var app = angular.module('myApp',[])
+        app.controller('myCtrl',function($scope){
+            $scope.firstName  = 'raghu',
+            $scope.lastName = 'prasad'
+        })
+    </script>
+</body>
+</html>
