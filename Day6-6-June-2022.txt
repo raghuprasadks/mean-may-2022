@@ -83,6 +83,14 @@ clone your project to this folder
 git pull after modifiying or adding some more files
 
 
+Jquery
+Create Simple Interest form
+
+Principal :
+Rate Of Interest:
+Time:
+<calculate>
+Simple Interest : 
 
 
 

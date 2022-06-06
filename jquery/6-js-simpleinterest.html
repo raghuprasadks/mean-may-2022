@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#btn").click(function(){
+      si = ($("#prin").val()*$("#roi").val()*$("#time").val())/100
+    $("#result").text(si)    
+  });  
+});
+</script>
+</head>
+<body>
+
+    Principal : <input type="number" id="prin">
+    Rate of Interest : <input type="number" id="roi">
+    Time in years : <input type="number" id="time">
+    <button id="btn">Calculate</button><br>
+    Simple Interest is <p id="result"></p>
+</body>
+</html>
