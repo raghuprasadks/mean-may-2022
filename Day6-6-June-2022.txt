@@ -20,6 +20,9 @@ git commands
 
 git --version
 
+mkdir demogit
+cd demogit
+
 git clone https://github.com/raghuprasadks/mean-may-2022.git
 
 https://confluence.atlassian.com/fishkb/unable-to-clone-git-repository-due-to-self-signed-certificate-376838977.html
@@ -27,6 +30,44 @@ https://confluence.atlassian.com/fishkb/unable-to-clone-git-repository-due-to-se
 git -c http.sslVerify=false clone <repository-name>
 
 git -c http.sslVerify=false clone https://github.com/raghuprasadks/mean-may-2022.git
+cd mean-may-2022
+it creates local git
+
+git -c http.sslVerify=false pull https://github.com/raghuprasadks/mean-may-2022.git
+
+First time
+steps to create your own project and check in into your own git repo
+
+1. create a folder myproj
+2. cd myproj
+3. create 1-gitdemo.html
+4. www.github.com
+5. create new repository myfirstgitproj
+6. git init
+7. to add files to git
+git add 1-gitdemo.html
+alternatively
+git add .
+git status
+
+git commit -m "my first git commit"
+
+git status
+
+git branch -M main
+git remote add origin https://github.com/raghuprasadks/myfirstgitproj.git
+
+git push -u origin main
+
+
+For every check-in
+
+git status
+git add .
+git commit -m "updated files"
+git push -u origin main
+
+
 
 
 
