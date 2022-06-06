@@ -72,6 +72,18 @@ https://dzone.com/articles/top-20-git-commands-with-examples
 https://www.youtube.com/watch?v=6cn0c-2n6G0
 
 
+Assignment:
+
+add two more files to the existing repository
+modify existing file
+check in the code
+
+Create new folder myprojclone
+clone your project to this folder
+git pull after modifiying or adding some more files
+
+
+
 
 
 
