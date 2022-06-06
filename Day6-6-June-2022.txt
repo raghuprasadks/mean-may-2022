@@ -57,7 +57,7 @@ git status
 git branch -M main
 git remote add origin https://github.com/raghuprasadks/myfirstgitproj.git
 
-git push -u origin main
+git -c http.sslVerify=false push -u origin main
 
 
 For every check-in
@@ -66,6 +66,10 @@ git status
 git add .
 git commit -m "updated files"
 git push -u origin main
+
+https://dzone.com/articles/top-20-git-commands-with-examples
+
+
 
 
 
