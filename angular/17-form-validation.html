@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        AngularJs ng-minlength Form Validation Example
+    </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script type="text/javascript">
+        var app = angular.module('formApp', []);
+        app.controller('formCtrl', function ($scope) {
+            $scope.sendForm = function () {
+                $scope.msg = "Form Validated";
+            };
+        });
+    </script>
+</head>
+
+<body>
+    <div ng-app="formApp" ng-controller="formCtrl">
+        <h3>AngularJs ng-minlength Form Validation Example</h3>
+        <form name="personForm" novalidate ng-submit="personForm.$valid &&sendForm()">
+            First Name:<input type="text" name="pincode" ng-model="txtpin" ng-minlength="5" required />
+            <span style="color:Red" ng-show="personForm.pincode.$error.required"> Required! </span>
+            <span style="color:Red" ng-show="personForm.pincode.$dirty&&personForm.pincode.$error.minlength"> Minimum 5
+                Characters Required </span>
+            <br /><br />
+            <button type="submit">Submit Form</button><br /><br />
+            <span>{{msg}}</span>
+        </form>
+    </div>
+</body>
+
+</html>
