@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+ <!--
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-wp-preserve="%3Cscript%20src%3D%22https%3A%2F%2Fajax.googleapis.com%2Fajax%2Flibs%2Fangularjs%2F1.6.9%2Fangular.min.js%22%3E%3C%2Fscript%3E" data-mce-resize="false" data-mce-placeholder="1" class="mce-object" width="20" height="20" alt="<script>" title="<script>" />
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-wp-preserve="%3Cscript%20src%3D%22angularCrud.js%22%3E%3C%2Fscript%3E" data-mce-resize="false" data-mce-placeholder="1" class="mce-object" width="20" height="20" alt="<script>" title="<script>" />
+    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="angularCrud.js"></script>
+    <title>Student Management Portal</title>
+ 
+ 
+</head>
+<body>
+ 
+ 
+<div ng-app="myapp" ng-controller="myctrl">
+ 
+        <label>Name</label>
+ 
+        <input type="text" name="name" ng-model="newStudent.name"/>
+ 
+        <label>Address</label>
+ 
+        <input type="text" name="address" ng-model="newStudent.address"/>
+ 
+        <label>Dept.</label>
+ 
+        <input type="text" name="dept" ng-model="newStudent.dept"/>
+ 
+         
+ 
+        <input type="hidden" ng-model="newStudent.id" />
+ 
+        <input type="button" value="Save" ng-click="saveRecord()" class="btn btn-primary"/>
+ 
+         
+ 
+         
+ 
+         
+<table border="1" bordercolor="blue">
+ 
+             
+<tr style="color:blue">
+ 
+                 
+<th style="width:150px">Name</th>
+ 
+ 
+                 
+<th style="width:150px">Address</th>
+ 
+ 
+                 
+<th style="width:150px">Dept</th>
+ 
+ 
+                     
+<th>Action</th>
+ 
+ 
+            </tr>
+ 
+ 
+             
+<tr style="color:pink" ng-repeat="student in students">
+ 
+                 
+<td>{{ student.name }}</td>
+ 
+ 
+                 
+<td>{{ student.address }}</td>
+ 
+ 
+                 
+<td>{{ student.dept }}</td>
+ 
+ 
+                 
+<td>
+ 
+                    <a href="#" ng-click="edit(student.id)">edit</a> | 
+ 
+                    <a href="#" ng-click="delete(student.id)">delete</a>
+ 
+                </td>
+ 
+ 
+            </tr>
+ 
+ 
+        </table>
+ 
+ 
+    </div>
+ 
+ 
+</body>
+ </html>
