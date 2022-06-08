@@ -1,19 +1,23 @@
 var app=angular.module('myapp',[]);
 app.controller('myctrl',function($scope){
     $scope.newStudent = {};
+   // $scope.newStudent.id=0
     empid=0;
     $scope.students=[]
    // console.log('student id '+$scope.newStudent.id)
 
     $scope.saveRecord = function () {
+
+        console.log('student id '+$scope.newStudent.id)
  
-        if ($scope.newStudent.id == null) {
+        if ($scope.newStudent.id == undefined) {
          
         $scope.newStudent.id = empid++;
          
         $scope.students.push($scope.newStudent);
-         
-        } else {
+        $scope.newStudent = {};
+        } 
+        else {
          
         for (i in $scope.students) {
          
@@ -21,11 +25,12 @@ app.controller('myctrl',function($scope){
          
         $scope.students[i] = $scope.newStudent;
          
-        }
+        } 
          
         }
          
         }
+        $scope.newStudent = {};
          
         
          
