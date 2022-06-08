@@ -1,0 +1,6 @@
+Agenda:
+Angular CRUD Operation
+AJAX
+Filters
+CSS test
+https://www.w3schools.com/css/css_quiz.asp
