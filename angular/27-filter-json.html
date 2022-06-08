@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<title>
+
+AngularJs JSON Filter to Convert JavaScript Object to JSON String
+
+</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+</head>
+
+<body ng-app="">
+
+<div>
+
+Default JSON Format
+
+<pre>{{ {'name': 'Suresh Dasari','age': '29'} | json }}</pre>
+
+JSON Format with Spacing
+
+<pre>{{ {'name': 'Suresh Dasari','age': '29'} | json:10 }}</pre>
+
+</div>
+
+</body>
+
+</html>
