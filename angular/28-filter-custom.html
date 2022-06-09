@@ -1,53 +1,31 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
+    <title>
+        AngularJs Custom Filter Example
+    </title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script type="text/javascript">
+        var app = angular.module('angularcustomapp', []);
+        app.filter('convertUpper', function () {
+            return function (item) {
+                return item.toUpperCase();
+            };
 
-<title>
+        });
 
-AngularJs Custom Filter Example
+        app.controller('CustomCtrl', function ($scope) {
+            $scope.name = 'Welcome to Tutlane.com';
 
-</title>
-
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-
-<script type="text/javascript">
-
-var app = angular.module('angularcustomapp', []);
-
-app.filter('convertUpper', function () {
-
-return function (item) {
-
-return item.toUpperCase();
-
-};
-
-});
-
-app.controller('CustomCtrl', function ($scope) {
-
-$scope.name = 'Welcome to Tutlane.com';
-
-});
-
-</script>
-
+        });
+    </script>
 </head>
-
 <body ng-app="angularcustomapp">
-
-<div ng-controller="CustomCtrl">
-
-<p>
-
-{{ name | convertUpper }}
-
-</p>
-
-</div>
-
+    <div ng-controller="CustomCtrl">
+        <p>
+            {{ name | convertUpper }}
+        </p>
+    </div>
 </body>
-
 </html>
