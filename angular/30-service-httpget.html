@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>
+
+        AngularJs $http Service Example
+
+    </title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+    <script type="text/javascript">
+
+        var app = angular.module('serviceApp', []);
+
+        app.controller('serviceCtrl', function ($scope, $http) {
+
+            $http({
+
+                method: 'GET',
+
+                url: 'sample.html'
+
+            }).then(function success(response) {
+                $scope.myWelcome = response.data;
+            }, function error(response) {
+                $scope.myWelcome = 'error';
+            });
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <div ng-app="serviceApp" ng-controller="serviceCtrl">
+
+        <p>Hi, Guest</p>
+
+        <h1>{{myWelcome}}</h1>
+
+    </div>
+
+</body>
+
+</html>

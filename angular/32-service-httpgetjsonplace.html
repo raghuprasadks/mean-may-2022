@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        AngularJs $http Service Example
+    </title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+    <script type="text/javascript">
+
+        var app = angular.module('serviceApp', []);
+
+        /**
+         * fetch('https://jsonplaceholder.typicode.com/todos/1')
+  .then(response => response.json())
+  .then(json => console.log(json))
+  **/
+
+        app.controller('serviceCtrl', function ($scope, $http) {
+
+            $http({
+
+                method: 'GET',
+
+                url: 'http://jsonplaceholder.typicode.com/users'
+
+            }).then(function success(response) {
+
+                $scope.myWelcome = response.data;
+
+                $scope.statusval = response.status;
+
+                $scope.statustext = response.statusText;
+
+                $scope.headers = response.headers();
+
+            }, function error(response) {
+                $scope.myWelcome ="error";
+            });
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <div ng-app="serviceApp" ng-controller="serviceCtrl">
+
+        <p>Hi, Guest</p>
+
+        <h1>{{myWelcome}}</h1>
+
+        <p>StatusCode: {{statusval}}</p>
+
+        <p>Status: {{statustext}}</p>
+
+        <p>Response Headers: {{headers}}</p>
+
+    </div>
+
+</body>
+
+</html>
