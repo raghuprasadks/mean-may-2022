@@ -7,3 +7,38 @@ CRUD using http
 https://www.heroku.com/
 
 https://krazytech.com/programs/combined-login-and-registration-application-in-angularjs
+
+https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css
+
+
+step 1 - create projects folder
+step 2 - create angularapp folder
+crate all the files inside angularapp
+step 3 - go to projects folder
+cd projects
+
+step 4 -
+npm init
+this will create package.json file
+step 5 -
+npm install express
+step 6 -
+create index.js
+copy following content
+
+var express = require('express');  
+var app = express();  
+  
+app.use(express.static("angularapp"));  
+  
+app.get('/', function (req, res) {  
+    res.redirect('/');  
+});  
+  
+app.listen(8080, 'localhost');  
+console.log("MyProject Server is Listening on port 8080");
+
+step 7:
+node index.js
+step 8:
+http://localhost:8080
