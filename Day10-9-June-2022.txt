@@ -1,0 +1,7 @@
+Agenda:
+xampp server - 
+aws,heroku,azure,google cloud
+AJAX
+CRUD using http
+
+https://www.heroku.com/
