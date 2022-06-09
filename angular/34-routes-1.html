@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>AngularJS Routing Example</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
+
+<script type="text/javascript">
+
+var app = angular.module("routesApp", ['ngRoute']);
+
+app.config(['$routeProvider',
+
+function ($routeProvider) {
+
+$routeProvider.when('/routeURL1', {
+
+templateUrl: 'sample1.htm',
+
+controller: 'sample1Controller'
+
+}).
+
+when('/routeURL2', {
+
+templateUrl: 'sample2.htm',
+
+controller: 'sample2Controller'
+
+}).
+
+otherwise({
+
+redirectTo: '/login'
+
+});
+
+}
+
+]);
+
+app.controller('sample1Controller',function($scope){
+
+$scope.message='Test Sample Page 1 URL';
+
+})
+
+app.controller('sample2Controller',function($scope){
+
+$scope.message='Test Sample Page 2 URL';
+
+})
+
+</script>
+
+</head>
+
+<body>
+
+<h2>AngularJS Routing Example</h2>
+
+<div ng-app="routesApp">
+
+<ul>
+
+<li>
+
+<a href="#/routeURL1">Sample Route1</a>
+
+</li>
+
+<li>
+
+<a href="#/routeURL2">Sample Route2</a>
+
+</li>
+
+</ul>
+
+<div ng-view></div>
+
+</div>
+
+</body>
+
+</html>
