@@ -5,3 +5,5 @@ AJAX
 CRUD using http
 
 https://www.heroku.com/
+
+https://krazytech.com/programs/combined-login-and-registration-application-in-angularjs
