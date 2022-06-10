@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>
+
+        AngularJs $watch() Function with Example
+
+    </title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+    <script type="text/javascript">
+
+        var app = angular.module('watchApp', []);
+
+        app.controller('watchCtrl', function ($scope) {
+
+            $scope.count = -1;
+
+            $scope.$watch('txtval', function (newval, oldval) {
+                console.log("new value:: "+newval)
+                console.log("old value:: "+oldval)
+
+                $scope.count = $scope.count + 1;
+
+            });
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <div ng-app="watchApp" ng-controller="watchCtrl">
+
+        <h2>AngularJS $watch() Function Example</h2>
+
+        Enter Text:<input type="text" ng-model="txtval" /><br /><br />
+
+        <span style="color:Red">No. of Times $watch() Function Fired: {{count}}</span>
+
+    </div>
+
+</body>
+
+</html>

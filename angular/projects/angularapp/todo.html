@@ -1,0 +1,22 @@
+//register.html
+<div class="col-md-6 col-md-offset-3">
+    <h4 style="text-align:center;color:blue">Todo</h4>
+    <form name="form" ng-submit="vm.createTodo()" role="form">
+        <div class="form-group" ng-class="{ 'has-error': form.title.$dirty && form.title.$error.required }">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" class="form-control" ng-model="vm.todo.title" required />
+            <span ng-show="form.title.$dirty && form.title.$error.required" class="help-block">Title is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.description.$dirty && form.description.$error.required }">
+            <label for="description">Description</label>
+            <input type="text" name="description" id="description" class="form-control" ng-model="vm.todo.description" required />
+            <span ng-show="form.description.$dirty && form.description.$error.required" class="help-block">Description is required</span>
+        </div>
+       
+        <div class="form-actions">
+            <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary">Add Todo</button>
+         <!--   <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgA" />  --><!-- truncated line -->
+            <a href="#!/" class="btn btn-link">Cancel</a>
+        </div>
+    </form>
+</div>

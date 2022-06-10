@@ -27,12 +27,17 @@
                     templateUrl: 'register.html',
                     controllerAs: 'vm'
                 })
+                .when('/todo', {
+                    controller: 'TodoController',
+                    templateUrl: 'todo.html',
+                    controllerAs: 'vm'
+                })
                 .otherwise({ redirectTo: '/login' });
         }    
         run.$inject = ['$rootScope'];
         
         function run(){
-          console.clear();
+        //  console.clear();
         }
     })();
      

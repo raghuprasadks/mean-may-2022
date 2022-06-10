@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>
+
+        AngularJs $timeout Service with Example
+
+    </title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+    <script type="text/javascript">
+
+        var app = angular.module('timeoutApp', []);
+
+        app.controller('timeoutCtrl', function ($scope, $timeout) {
+
+            $scope.msg = "Hi Guest"
+
+            $timeout(function () {
+
+                $scope.msg = "Welcome to Tutlane.com";
+
+            }, 10000);
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <div ng-app="timeoutApp" ng-controller="timeoutCtrl">
+
+        <p>AngularJS $timeout Function Example</p>
+
+        <b>{{msg}}</b>
+
+    </div>
+
+</body>
+
+</html>

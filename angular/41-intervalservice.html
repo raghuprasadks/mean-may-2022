@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>
+
+        AngularJs $interval Service with Example
+
+    </title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+    <script type="text/javascript">
+
+        var app = angular.module('intervalApp', []);
+
+        app.controller('intervalCtrl', function ($scope, $interval) {
+
+            $scope.ptime = new Date().toLocaleTimeString();
+
+            $interval(function () {
+
+                $scope.ptime = new Date().toLocaleTimeString();
+
+            }, 1000);
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <div ng-app="intervalApp" ng-controller="intervalCtrl">
+
+        <p>AngularJS $Interval Service Example</p>
+
+        Current Time: <b>{{ptime}}</b>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>
+
+        AngularJs Factory Service Example
+
+    </title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+    <script type="text/javascript">
+
+        var app = angular.module('myApp', []);
+
+        // Creating Factory
+
+        app.factory('myFactory', function () {
+
+            var displayFact;
+
+            var addMSG = function (msg) {
+
+                displayFact = ' Hi Guest, Welcome to ' + msg;
+
+            }
+
+            return {
+
+                setMSG: function (msg) {
+
+                    addMSG(msg);
+
+                },
+
+                getMSG: function () {
+
+                    return displayFact;
+
+                }
+
+            };
+
+        });
+
+
+
+        // Creating Service
+
+        app.service('myService', function () {
+
+            var displayServ;
+
+            var addMSG = function (msg) {
+
+                displayServ = 'Hi Guest, Welcome to ' + msg;
+
+            }
+
+            this.setMSG = function (msg) {
+
+                addMSG(msg);
+
+            }
+
+            this.getMSG = function () {
+
+                return displayServ;
+
+            }
+
+        });
+
+
+
+        app.controller("myCtrl", function ($scope, myService, myFactory) {
+
+            //Inject factory and service both to controller.
+
+            myFactory.setMSG("Tutlane (with Factory)");
+
+            myService.setMSG("Tutlane (with Service)");
+
+
+
+            //Prepare a collection
+
+            $scope.myCollections = [
+
+                myFactory.getMSG(),
+
+                myService.getMSG()
+
+            ];
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <div ng-app="myApp" ng-controller="myCtrl">
+
+        <div ng-repeat="coll in myCollections">
+
+            {{coll}}
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

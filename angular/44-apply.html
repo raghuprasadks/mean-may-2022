@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>
+
+        AngularJs $apply() Function with Example
+
+    </title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+    <script type="text/javascript">
+
+        var app = angular.module('applyApp', []);
+
+        app.controller('applyCtrl', function ($scope) {
+
+            $scope.currentDateTime = new Date();
+
+            $scope.updatedtime = function () {
+
+                $scope.currentDateTime = new Date();
+
+            }
+
+            //Added an event listener.
+
+            var event = document.getElementById("btnapply");
+
+            event.addEventListener('click', function () {
+
+                //The $apply method is use to update date time on rootScope forcefully.
+
+                $scope.$apply(function () {
+
+                    //get dateTime
+
+                    $scope.currentDateTime = new Date();
+
+                });
+
+            });
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <div ng-app="applyApp" ng-controller="applyCtrl">
+
+        <h2>AngularJS $apply() Function Example</h2>
+
+        <input type="button" value="Click to Update DateTime" ng-click="updatedtime()" />
+
+        <input type="button" value="Click to Update DateTime forcefully." id="btnapply" />
+
+        <br /><br />
+
+        <span style="color:Red">Current Date Time: {{currentDateTime | date:'yyyy-MM-dd HH:mm:ss'}}</span>
+
+    </div>
+
+</body>
+
+</html>
