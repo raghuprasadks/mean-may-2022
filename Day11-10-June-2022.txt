@@ -6,3 +6,5 @@ Functionality app
 built-in services
 Node.js
 https://embed.plnkr.co/2sBW2L/
+
+https://jasonwatmore.com/post/2015/03/10/angularjs-user-registration-and-login-example-tutorial
