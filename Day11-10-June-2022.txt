@@ -1,0 +1,7 @@
+https://dev.to/lydiahallie/javascript-visualized-event-loop-3dif
+robo mongo
+
+Agenda:
+Functionality app 
+built-in services
+Node.js
