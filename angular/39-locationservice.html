@@ -4,47 +4,47 @@
 
 <head>
 
-<title>
+    <title>
 
-AngularJs $location Service with Example
+        AngularJs $location Service with Example
 
-</title>
+    </title>
 
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
-<script type="text/javascript">
+    <script type="text/javascript">
 
-var app = angular.module('locationApp', []);
+        var app = angular.module('locationApp', []);
 
-app.controller('locationCtrl', function ($scope, $location) {
+        app.controller('locationCtrl', function ($scope, $location) {
 
-$scope.weburl = $location.absUrl();
+            $scope.weburl = $location.absUrl();
 
-$scope.urlhost = $location.host();
+            $scope.urlhost = $location.host();
 
-$scope.urlport = $location.port();
+            $scope.urlport = $location.port();
 
-$scope.urlprotocol = $location.protocol();
+            $scope.urlprotocol = $location.protocol();
 
-});
+        });
 
-</script>
+    </script>
 
 </head>
 
 <body>
 
-<div ng-app="locationApp" ng-controller="locationCtrl">
+    <div ng-app="locationApp" ng-controller="locationCtrl">
 
-<p>Url of Webpage: {{weburl}}</p>
+        <p>Url of Webpage: {{weburl}}</p>
 
-<p>Host of Webpage: {{urlhost}}</p>
+        <p>Host of Webpage: {{urlhost}}</p>
 
-<p>Port of Webpage: {{urlport}}</p>
+        <p>Port of Webpage: {{urlport}}</p>
 
-<p>Protocol of Webpage: {{urlprotocol}}</p>
+        <p>Protocol of Webpage: {{urlprotocol}}</p>
 
-</div>
+    </div>
 
 </body>
 

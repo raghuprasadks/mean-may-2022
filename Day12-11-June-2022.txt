@@ -1,0 +1,27 @@
+Agenda:
+Node.js
+What is node.js
+What kind of applications can be built
+Which companies are using node.js
+https://www.trio.dev/blog/companies-use-node-js
+
+steps :
+create nodetutorial folder
+cd nodetutorials
+code .
+open terminal
+npm init
+
+create 1-node-gettingstarted.js
+
+console.log('node js getting started')
+
+function greet(){
+    console.log('Hi ..')
+}
+
+greet()
+
+to run in command prompt
+node 1-node-gettingstarted.js
+
