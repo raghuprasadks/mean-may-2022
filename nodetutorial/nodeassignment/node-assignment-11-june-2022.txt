@@ -1,0 +1,22 @@
+1. Create following functions
+and export it to use in other program
+
+dateUtil(date,format){
+return date as per the format
+}
+
+dateUtil(new Date(),'dd/mm/yyyy')
+
+output : 11-june-2022 40m:
+11/06/2022
+dateUtil(new Date(),'mm/dd/yyyy')
+06/11/2022
+dateUtil(new Date(),'dd/mon/yyyy')
+11/june/2022
+
+
+
+
+
+
+
