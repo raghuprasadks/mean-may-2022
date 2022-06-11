@@ -13,6 +13,9 @@ dateUtil(new Date(),'mm/dd/yyyy')
 06/11/2022
 dateUtil(new Date(),'dd/mon/yyyy')
 11/june/2022
+https://code.tutsplus.com/tutorials/how-to-change-the-date-format-in-javascript--cms-39400
+
+npm i date-and-time
 
 
 
