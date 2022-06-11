@@ -9,6 +9,6 @@ function showDateTime(){
 }
 
 showDateTime()
-greet()
+clsgreet()
 
 console.log('Simulating asynchrounous')

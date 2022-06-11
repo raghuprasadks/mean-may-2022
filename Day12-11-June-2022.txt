@@ -4,7 +4,7 @@ What is node.js
 What kind of applications can be built
 Which companies are using node.js
 https://www.trio.dev/blog/companies-use-node-js
-
+https://dev.to/lydiahallie/javascript-visualized-event-loop-3dif
 steps :
 create nodetutorial folder
 cd nodetutorials
@@ -24,4 +24,5 @@ greet()
 
 to run in command prompt
 node 1-node-gettingstarted.js
+
 
