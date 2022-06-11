@@ -7,6 +7,8 @@ https://www.trio.dev/blog/companies-use-node-js
 https://dev.to/lydiahallie/javascript-visualized-event-loop-3dif
 steps :
 create nodetutorial folder
+
+
 cd nodetutorials
 code .
 open terminal
@@ -25,4 +27,6 @@ greet()
 to run in command prompt
 node 1-node-gettingstarted.js
 
+npm install -g nodemon
+nodemon .\5-node-http-contenttype.js
 
