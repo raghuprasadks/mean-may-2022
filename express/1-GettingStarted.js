@@ -5,11 +5,13 @@ const querystring = require('querystring')
 const app = express()
 port = 3000
 
+//localhost:3000
 app.get('/',function(req,res){
     console.log('get method')
     res.send('Get method : Hi from express server')
 })
 
+//localhost:3000/welcome
 app.get('/welcome',function(req,res){
     console.log('get method:welcome')
     res.send('Welcome to join me to learn express')
@@ -42,7 +44,6 @@ let parsedQs = querystring.parse(parsedUrl.query);
 res.send(parsedQs)
 
 })
-
 
 
 app.listen(port,function(){
