@@ -2,7 +2,6 @@ const express = require('express')
 const app = express()
 const port = 3000
 
-
 app.use(express.json())
 
 products=[]
@@ -51,6 +50,7 @@ app.delete("/products/:code",(req,res)=>{
     res.send(pcode)
 })
 
+/**
 
 app.put("/products/:code",(req,res)=>{
     pcode = req.params.code
@@ -68,7 +68,26 @@ app.put("/products/:code",(req,res)=>{
         updatedprod = {code : "not found"}
 
     res.send(updatedprod)
+})
 
+ */
+app.put("/products/:code",(req,res)=>{
+    pcode = req.params.code
+    updatedprod = req.body
+    isNotFound = true
+    products.map((product)=>{
+        if (product.code ==pcode)
+        {
+            product = updatedprod
+            isNotFound = false
+        }
+    })
+ 
+    if (isNotFound)
+        
+        updatedprod = {code : "not found"}
+
+    res.send(updatedprod)
 })
 
 app.listen(port,()=>{
