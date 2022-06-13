@@ -1,0 +1,17 @@
+Agenda:
+express js - framework built on
+top of node.js
+Developing restful api
+soap web service
+REST web service
+Representational State Transfer
+url using http
+API - Application Programming Interface
+Frontend - Angular.js
+Backend - node.js,express.js
+
+steps
+1. create express folder
+2. cd express
+3. npm init
+4. npm i express
