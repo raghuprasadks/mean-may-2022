@@ -29,3 +29,8 @@ delete the data of a specific state
 g.http://localhost:3000/coronamax
 Method : get
 display the state having highest corona cases
+
+g.http://localhost:3000/deathrate
+Method : get
+display the states having death rate more than 10 %
+deathrate = death/total >10 %
