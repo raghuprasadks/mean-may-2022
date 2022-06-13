@@ -13,6 +13,12 @@ app.get('/',function(req,res){
     res.end('After middleware')
 })
 
+app.get('/testingmiddleware',function(req,res){
+    console.log('testingmiddleware');
+    res.end('After middleware::')
+})
+
+
 app.listen(3000,function(req,res){
     console.log('server has started');
 })

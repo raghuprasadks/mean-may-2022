@@ -1,5 +1,16 @@
 const express = require('express')
 var router = express.Router();
+/**
+ * {
+ *  "code":1,
+ * "name":"test prod",
+ * "description":"test prod desc",
+ * "category":"electronics",
+ * "manufacturer":"philips",
+ * "price":30000
+ * }
+ */
+
 products = []
 router.get('/product',function(req,res){
  	console.log('product management - get request');
