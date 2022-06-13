@@ -1,0 +1,31 @@
+Assignment
+1. Develop following API's using express
+a.http://localhost:3000/corona
+Method : post
+Use following sample json structure
+{
+"code":14
+"name":"Karnataka",
+"total":10000,
+"active":1000,
+"cured":8000,
+"death":1000
+}
+create data of all southern states
+b.http://localhost:3000/corona
+Method : get
+get the array of corona data of various states
+
+c.http://localhost:3000/corona/statename
+Method : get
+get the data of a specific state
+
+d.http://localhost:3000/corona/code
+Method : update
+update the data of a specific state
+f.http://localhost:3000/corona/code
+Method : delete
+delete the data of a specific state
+g.http://localhost:3000/coronamax
+Method : get
+display the state having highest corona cases
