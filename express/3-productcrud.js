@@ -75,17 +75,25 @@ app.put("/products/:code",(req,res)=>{
     pcode = req.params.code
     updatedprod = req.body
     isNotFound = true
-    products.map((product)=>{
+    updprodarray = products.map((product)=>{
         if (product.code ==pcode)
         {
             product = updatedprod
             isNotFound = false
         }
+        return product
+
     })
  
     if (isNotFound)
-        
+    {
+  
         updatedprod = {code : "not found"}
+    }else
+    {
+        products = updprodarray
+    }
+
 
     res.send(updatedprod)
 })
