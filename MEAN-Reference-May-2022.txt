@@ -2,3 +2,4 @@ https://www.mongodb.com/mean-stack
 https://www.simform.com/blog/web-application-architecture/#:~:text=Web%20application%20architecture%20is%20a,for%20a%20better%20web%20experience.
 
 https://www.slideshare.net/vmahima/training-on-angular-js
+https://www.freecodecamp.org/news/mongoose101/
