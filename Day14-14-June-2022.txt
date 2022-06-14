@@ -210,6 +210,52 @@ db.COLLECTION_NAME.find().sort({KEY:1})
 db.mycol.find({},{"title":1,_id:0}).sort({"title":-1})
 
 
+27. Aggregage functions
+
+Create post collection with following documents
+
+{
+   title: 'MongoDB Overview', 
+   description: 'MongoDB is no sql database',
+   by_user: 'tutorials point',
+   url: 'http://www.tutorialspoint.com',
+   tags: ['mongodb', 'database', 'NoSQL'],
+   likes: 100
+}
+
+{
+   title: 'NoSQL Overview', 
+   description: 'No sql database is very fast',
+   by_user: 'tutorials point',
+   url: 'http://www.tutorialspoint.com',
+   tags: ['mongodb', 'database', 'NoSQL'],
+   likes: 10
+}
+{
+   title: 'Neo4j Overview', 
+   description: 'Neo4j is no sql database',
+   by_user: 'Neo4j',
+   url: 'http://www.neo4j.com',
+   tags: ['neo4j', 'database', 'NoSQL'],
+   likes: 750
+}
+
+Group by commands
+
+1. display a list stating how many tutorials are written by each user
+db.post.aggregate([{$group : {_id : "$by_user", num_tutorial : {$sum : 1}}}])
+
+2. sum of likes
+db.post.aggregate([{$group : {_id : "$by_user", num_tutorial : {$sum : "$likes"}}}])
+3. average of likes
+db.post.aggregate([{$group : {_id : "$by_user", num_tutorial : {$avg : "$likes"}}}])
+4. minimum
+db.post.aggregate([{$group : {_id : "$by_user", num_tutorial : {$min : "$likes"}}}])
+5. maximum
+db.post.aggregate([{$group : {_id : "$by_user", num_tutorial : {$max : "$likes"}}}])
+
+
+
 
 
 
