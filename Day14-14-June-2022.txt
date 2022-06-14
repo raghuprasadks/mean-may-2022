@@ -143,6 +143,73 @@ db.post.update({'title':'MongoDB Overview'},{$set:{'title':'New MongoDB Tutorial
 db.post.update({'title':'MongoDB Overview'},
    {$set:{'title':'New MongoDB Tutorial'}},{multi:true})
 
+26. Other commands
+
+-----
+
+MongoDB Save() Method
+The save() method replaces the existing document with the new document passed in the save() method.
+
+----
+db.post.save(
+   {
+      "_id" : ObjectId("5983548781331adf45ec7"), "title":"Tutorials Point New Topic",
+         "by":"Tutorials Point"
+   }
+)
+---   
+Delete Document--remove
+---
+db.COLLECTION_NAME.remove(DELLETION_CRITTERIA)
+---
+db.post.remove({'title':'MongoDB Overview'})
+---
+Remove Only One
+---
+db.post.remove({'title':'MongoDB Overview'},1)
+---
+Projection - displaying required keys
+---
+MongoDB's find() method, explained in MongoDB Query Document accepts second optional parameter that is list of fields that you want to retrieve. 
+In MongoDB, when you execute find() method, then it displays all fields of a document. 
+To limit this, you need to set a list of fields with value 1 or 0. 1 is used to show the field while 0 is used to hide the fields.
+--
+db.post.find({},{"title":1,_id:0})
+
+---
+Limit Records
+----
+db.post.find({},{"title":1,_id:0}).limit(2)
+
+---
+MongoDB Skip() Method
+Apart from limit() method, there is one more method skip() which also 
+accepts number type argument and is used to skip the number of documents.
+
+Syntax
+The basic syntax of skip() method is as follows −
+
+>db.COLLECTION_NAME.find().limit(NUMBER).skip(NUMBER)
+---
+Example
+Following example will display only the second document.
+
+>db.post.find({},{"title":1,_id:0}).limit(1).skip(1)
+----
+Sort Records
+----
+The sort() Method
+To sort documents in MongoDB, you need to use sort() method. 
+The method accepts a document containing a list of fields along with 
+their sorting order. To specify sorting order 1 and -1 are used. 
+1 is used for ascending order while -1 is used for descending order.
+---
+db.COLLECTION_NAME.find().sort({KEY:1})
+
+----
+db.mycol.find({},{"title":1,_id:0}).sort({"title":-1})
+
+
 
 
 
