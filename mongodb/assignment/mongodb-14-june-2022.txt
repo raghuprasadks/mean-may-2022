@@ -1,0 +1,19 @@
+1. create document as per following structure
+
+document name is corona
+{
+ [
+{
+	country:<name of the country>,
+	total:<total cases>,
+	active:<active>,	
+	recovered:<recovered>,
+	death:<death>
+	states:[{name:TN,total,active...
+	patients:[{name:<>,aadhar:<>,status<>}]
+}]
+	
+}
+]
+2. Insert data for at least two country
+having two states and 5 patients
