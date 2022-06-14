@@ -1,0 +1,281 @@
+Agenda:
+Database
+MongoDB
+starting server and client
+different commands
+
+CustomerID
+ProductID
+
+SELECT * FROM customers,products
+where customers.customerid = products.customerid
+
+Not Only SQL
+no-sql
+document database
+information is stored in a json
+structure/with out structure
+MongoDB
+embed
+
+MongoDB Getting started
+1. Mongodb server should be installed
+https://www.mongodb.com/try/download/community
+2. server
+client
+
+C:\Program Files\MongoDB\Server\4.2\bin\mongod.exe" --config "C:\Program Files\MongoDB\Server\4.2\bin\mongod.cfg" --service
+
+open upto ..bin folder from file explorer
+cmd
+mongo (for running client)
+mongod (for running server)
+
+Commands:
+1. list existing databases
+show dbs
+2. Create a new database
+use iqviatrng2022
+3. create a collection employee
+db.createCollection("employee")
+4. List collections
+show collections
+5. Insert data into collection
+db.employee.insert({"code":1,"name":"ranga","dept":"IT","desg":"Software Engineer","salary":40000})
+
+6. Insert multiple documents
+db.employee.insert([{"code":2,"name":"rakesh","dept":"IT","desg":"Software Engineer","salary":40000},{"code":3,"name":"ramya","dept":"IT","desg":"Senior Software Engineer","salary":60000},{"code":4,"name":"suresh","dept":"IT","desg":"Lead","salary":80000}])
+
+7. display all documents
+db.employee.find()
+8. Display all documents in a format
+db.employee.find().pretty()
+9. Search for employee rakesh
+db.employee.find({"name":"rakesh"})
+10. Insert document without creating a collection
+db.student.insert({"id":1,"name":"lokesh","class":12,"school":"Vidya Mandir"})
+11. Insert a document into student with different structure
+db.student.insert({"id":2,"name":"likitha","class":10,"school":"Vidya Mandir","activities":"Cultural"})
+
+
+12. drop a database
+use testdb
+db.testdb.insert({"name":"test"})
+db.dropDatabase()
+
+13. display current database
+db
+14. Switch to a specific database
+use iqviatrng2022
+
+15. Create and insert document to post collection
+
+db.post.insert([
+   {
+      title: 'MongoDB Overview', 
+      description: 'MongoDB is no sql database',
+      by: 'tutorials point',
+      url: 'http://www.tutorialspoint.com',
+      tags: ['mongodb', 'database', 'NoSQL'],
+      likes: 100
+   },
+	
+   {
+      title: 'NoSQL Database', 
+      description: "NoSQL database doesn't have tables",
+      by: 'tutorials point',
+      url: 'http://www.tutorialspoint.com',
+      tags: ['mongodb', 'database', 'NoSQL'],
+      likes: 20, 
+      comments: [	
+         {
+            user:'user1',
+            message: 'My first comment',
+            dateCreated: new Date(2013,11,10,2,35),
+            like: 0 
+         }
+      ]
+   }
+])
+
+16. Find with equality
+db.post.find({"by":"tutorials point"})
+
+17. Lesser than
+Syntax : Less Than   {<key>:{$lt:<value>}} 
+db.post.find({"likes":{$lt:50}}).pretty()   
+//sql where likes < 50
+
+18. Lesser than or equalto
+Syntax : Less Than   {<key>:{$lte:<value>}} 
+db.post.find({"likes":{$lte:50}}).pretty()   
+//sql where likes <= 50
+
+19. Greater than 
+Syntax : Greater Than   {<key>:{$gt:<value>}} 
+db.post.find({"likes":{$gt:50}}).pretty()   
+//sql where likes > 50
+
+20. Greater than or equalto
+Syntax : Greater Than  or equal to  {<key>:{$gte:<value>}} 
+db.post.find({"likes":{$gte:50}}).pretty()   
+//sql where likes >= 50
+
+20. not equal to
+Syntax : not equal to  {<key>:{$ne:<value>}} 
+db.post.find({"likes":{$ne:50}}).pretty()   
+//sql where likes != 50
+
+21. and
+db.post.find({$and:[{"by":"tutorials point"},{"title": "MongoDB Overview"}]}).pretty() 
+
+22. or
+db.post.find({$or:[{"by":"tutorials point"},{"title": "MongoDB Overview"}]}).pretty()
+
+23. and or
+db.post.find({"likes": {$gt:10}, $or: [{"by": "tutorials point"},
+   {"title": "MongoDB Overview"}]}).pretty()
+
+24. Update one document
+db.post.update({'title':'MongoDB Overview'},{$set:{'title':'New MongoDB Tutorial'}})
+
+25. Update many
+db.post.update({'title':'MongoDB Overview'},
+   {$set:{'title':'New MongoDB Tutorial'}},{multi:true})
+
+26. Other commands
+
+-----
+
+MongoDB Save() Method
+The save() method replaces the existing document with the new document passed in the save() method.
+
+----
+db.post.save(
+   {
+      "_id" : ObjectId("5983548781331adf45ec7"), "title":"Tutorials Point New Topic",
+         "by":"Tutorials Point"
+   }
+)
+---   
+Delete Document--remove
+---
+db.COLLECTION_NAME.remove(DELLETION_CRITTERIA)
+---
+db.post.remove({'title':'MongoDB Overview'})
+---
+Remove Only One
+---
+db.post.remove({'title':'MongoDB Overview'},1)
+---
+Projection - displaying required keys
+---
+MongoDB's find() method, explained in MongoDB Query Document accepts second optional parameter that is list of fields that you want to retrieve. 
+In MongoDB, when you execute find() method, then it displays all fields of a document. 
+To limit this, you need to set a list of fields with value 1 or 0. 1 is used to show the field while 0 is used to hide the fields.
+--
+db.post.find({},{"title":1,_id:0})
+
+---
+Limit Records
+----
+db.post.find({},{"title":1,_id:0}).limit(2)
+
+---
+MongoDB Skip() Method
+Apart from limit() method, there is one more method skip() which also 
+accepts number type argument and is used to skip the number of documents.
+
+Syntax
+The basic syntax of skip() method is as follows −
+
+>db.COLLECTION_NAME.find().limit(NUMBER).skip(NUMBER)
+---
+Example
+Following example will display only the second document.
+
+>db.post.find({},{"title":1,_id:0}).limit(1).skip(1)
+----
+Sort Records
+----
+The sort() Method
+To sort documents in MongoDB, you need to use sort() method. 
+The method accepts a document containing a list of fields along with 
+their sorting order. To specify sorting order 1 and -1 are used. 
+1 is used for ascending order while -1 is used for descending order.
+---
+db.COLLECTION_NAME.find().sort({KEY:1})
+
+----
+db.mycol.find({},{"title":1,_id:0}).sort({"title":-1})
+
+
+27. Aggregage functions
+
+Create post collection with following documents
+
+{
+   title: 'MongoDB Overview', 
+   description: 'MongoDB is no sql database',
+   by_user: 'tutorials point',
+   url: 'http://www.tutorialspoint.com',
+   tags: ['mongodb', 'database', 'NoSQL'],
+   likes: 100
+}
+
+{
+   title: 'NoSQL Overview', 
+   description: 'No sql database is very fast',
+   by_user: 'tutorials point',
+   url: 'http://www.tutorialspoint.com',
+   tags: ['mongodb', 'database', 'NoSQL'],
+   likes: 10
+}
+{
+   title: 'Neo4j Overview', 
+   description: 'Neo4j is no sql database',
+   by_user: 'Neo4j',
+   url: 'http://www.neo4j.com',
+   tags: ['neo4j', 'database', 'NoSQL'],
+   likes: 750
+}
+
+Group by commands
+
+1. display a list stating how many tutorials are written by each user
+db.post.aggregate([{$group : {_id : "$by_user", num_tutorial : {$sum : 1}}}])
+
+2. sum of likes
+db.post.aggregate([{$group : {_id : "$by_user", num_tutorial : {$sum : "$likes"}}}])
+3. average of likes
+db.post.aggregate([{$group : {_id : "$by_user", num_tutorial : {$avg : "$likes"}}}])
+4. minimum
+db.post.aggregate([{$group : {_id : "$by_user", num_tutorial : {$min : "$likes"}}}])
+5. maximum
+db.post.aggregate([{$group : {_id : "$by_user", num_tutorial : {$max : "$likes"}}}])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
