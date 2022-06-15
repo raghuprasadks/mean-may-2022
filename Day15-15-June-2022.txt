@@ -9,3 +9,11 @@ Steps
 3. npm init
 4. Install mongodb driver
 npm i mongodb
+
+Mongodb documentation
+https://www.mongodb.com/docs/drivers/node/current/
+
+Mongoose
+npm i mongoose
+
+https://mongoosejs.com/docs/schematypes.html
