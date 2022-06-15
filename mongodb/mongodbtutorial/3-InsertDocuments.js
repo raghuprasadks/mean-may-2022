@@ -3,6 +3,7 @@ var url = "mongodb://localhost:27017/";
 
 MongoClient.connect(url, function(err, db) {
   if (err) throw err;
+  
   var dbo = db.db("iqviatrng2022");
   var myobj = { name: "Company Inc", address: "Highway 37" };
   
@@ -10,6 +11,7 @@ MongoClient.connect(url, function(err, db) {
     if (err) throw err;
 
     console.log('result '+res.insertedId)
+
     console.log("1 document inserted");
     db.close();
   });
