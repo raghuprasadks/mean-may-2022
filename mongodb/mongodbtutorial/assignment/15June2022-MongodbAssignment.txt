@@ -37,7 +37,12 @@ You can use postman to call this api.
 3. write get method - api/bank
 this should retrive documents from bank collection
 You can use postman to call this api.
-
+4. update - api/bank:id
+5. delete - api/bank:id
+6. api/bank:<banktype>
+banktype : 1 - display public banks
+banktype : 0 - display private  banks
+banktype : a - display all banks
 
 
 
