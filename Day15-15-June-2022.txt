@@ -17,3 +17,5 @@ Mongoose
 npm i mongoose
 
 https://mongoosejs.com/docs/schematypes.html
+https://mongoosejs.com/docs/queries.html
+
