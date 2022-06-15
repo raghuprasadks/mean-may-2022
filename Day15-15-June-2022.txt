@@ -1,0 +1,11 @@
+Agenda:
+Node,express with MongoDB
+Driver
+mongodb client - Mongodb queries
+mongoose - ORM - Object Relational Mapping
+Steps
+1 - create mongodbtutorial folder
+2. cd mongodbtutorial
+3. npm init
+4. Install mongodb driver
+npm i mongodb

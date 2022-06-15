@@ -3,3 +3,4 @@ https://www.simform.com/blog/web-application-architecture/#:~:text=Web%20applica
 
 https://www.slideshare.net/vmahima/training-on-angular-js
 https://www.freecodecamp.org/news/mongoose101/
+https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose
