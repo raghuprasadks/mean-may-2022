@@ -11,6 +11,7 @@
     <div ng-controller="productController">
         <h1>Product App</h1>
         <div>
+            <input type="text" ng-model="_id" name="_id" hidden><br>
             <label for="code">Code</label>
             <input type="text" ng-model="code" name="code"><br>
             <label for="name">Name</label>
@@ -21,11 +22,12 @@
             <input type="text" ng-model="manu" name="manu"><br>
             <label for="price">Price</label>
             <input type="text" ng-model="price" name="price"><br>
-            <button ng-click="addProduct()">Add Product</button>
+            <button ng-if="!edit" ng-click="addProduct()">Add Product</button>
+            <button ng-if="edit" ng-click="updateProduct()">Update Product</button>
             <button ng-click="displayProduct()">View Product</button>
             <h1>{{message}}</h1>
         </div>
-        <div ng-if="products.length>0">
+        <div ng-if="products.length>=1 && display">
             <table>
                 <tr>
                     <th>Code</th>
@@ -39,7 +41,10 @@
                     <td>{{product.name}}</td>
                     <td>{{product.desc}}</td>
                     <td>{{product.manu}}</td>
-                    <td>{{product.price}}</td>                    
+                    <td>{{product.price}}</td>
+                    <td><button ng-click="deleteProduct(product)"">Delete</button></td>
+                    <td><button ng-click="editProduct(product)"">Update</button></td>
+                    
                 </tr>
 
             </table>
@@ -50,9 +55,14 @@
         const url = "http://localhost:3000/api/product"
         app.controller("productController",function($scope,$http){
             $scope.message = ''
+            $scope.display=false
+            $scope.edit=false
             $scope.products={}
+            $scope._id=0
             $scope.addProduct=function(){
+                $scope.edit=false
                 $scope.message = ''
+                $scope.display=false
                 console.log('add product')
                 product={
 
@@ -67,7 +77,14 @@
                 .then(function(response){
                    // $scope.message=response.data
                  //  $scope.message='Product is saved'
-                  $scope.message=response.data.message
+                  
+                 $scope.code=''
+                 $scope.name='',
+                 $scope.desc='',
+                 $scope.manu='',
+                 $scope.price=''
+                 $scope.message=response.data.message
+
 
                 }).catch(function(err){
                   //  $scope.message='Error while saving.Try again'
@@ -76,6 +93,7 @@
             }
 
             $scope.displayProduct=function(){
+                $scope.display=true
                 $scope.message = ''
                 console.log('display product')
                 $http.get(url)
@@ -86,6 +104,69 @@
                 .catch(function(err){
                     $scope.products={}
                 })
+            }
+
+            $scope.deleteProduct=function(product){
+                $scope.message = ''
+                console.log('delete product:id'+product._id)
+                
+                $http.delete(url+'/'+product._id)
+                .then(function(response){
+                    console.log('response '+response)
+                    //$scope.displayProduct()
+       //             $scope.products = response.data
+                    $scope.display=false
+                   
+                })
+                .catch(function(err){
+                    $scope.products={}
+                })
+            }
+
+            $scope.editProduct=function(product){
+                $scope.edit=true
+                $scope.message = ''
+                console.log('update product:id'+product._id)
+                $scope._id =product._id
+                $scope.code =product.code
+                $scope.name =product.name
+                $scope.desc =product.desc
+                $scope.manu =product.manu
+                $scope.price =product.price
+            }
+
+       
+            $scope.updateProduct=function(){
+
+                updateProduct={
+                    _id:$scope._id,
+                    code:$scope.code,
+                    name:$scope.name,
+                    desc:$scope.desc,
+                    manu:$scope.manu,
+                    price:$scope.price
+                }
+
+                $http.put(url+'/'+$scope._id,updateProduct)
+                .then(function(response){
+                    console.log('product update '+response)
+                    //$scope.displayProduct()
+       //             $scope.products = response.data
+                    $scope.display=false
+                 //   $scope.resetProduct()
+                    $scope.edit=false
+                    $scope.code=''
+                    $scope.name='',
+                    $scope.desc='',
+                    $scope.manu='',
+                    $scope.price=''
+                 
+                   
+                })
+                .catch(function(err){
+                    $scope.products={}
+                })
+                
             }
 
         })

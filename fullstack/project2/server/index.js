@@ -63,6 +63,37 @@ app.get("/api/product",(req,res)=>{
     res.send(products)
 })
 
+app.delete("/api/product/:id",(req,res)=>{
+    console.log("/api/product delete method")
+    product.findByIdAndRemove(req.params.id,function(err,response){
+        if (err)
+        {            
+            console.log('error'+err)
+            res.json({"message":"error in deleting"})    
+        }else{
+            console.log("success::"+response)         
+            res.json({"message":response})         
+        }        
+    })
+    //res.send(products)
+})
+
+app.put("/api/product/:id",(req,res)=>{
+    updprod = req.body
+    console.log("/api/product update method")
+    product.findByIdAndUpdate(req.params.id,updprod,function(err,response){
+        if (err)
+        {            
+            console.log('error'+err)
+            res.json({"message":"error in updating"})    
+        }else{
+            console.log("success::"+response)         
+            res.json({"message":response})         
+        }        
+    })
+    //res.send(products)
+})
+
 app.listen(port,()=>{
     console.log(`Server started at ${port}`)
 })
