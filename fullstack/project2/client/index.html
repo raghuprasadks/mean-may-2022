@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app="productApp">
+    <div ng-controller="productController">
+        <h1>Product App</h1>
+        <div>
+            <label for="code">Code</label>
+            <input type="text" ng-model="code" name="code"><br>
+            <label for="name">Name</label>
+            <input type="text" ng-model="name" name="name"><br>
+            <label for="desc">Description</label>
+            <input type="text" ng-model="desc" name="desc"><br>
+            <label for="manu">Manufacturer</label>
+            <input type="text" ng-model="manu" name="manu"><br>
+            <label for="price">Price</label>
+            <input type="text" ng-model="price" name="price"><br>
+            <button ng-click="addProduct()">Add Product</button>
+            <button ng-click="displayProduct()">View Product</button>
+            <h1>{{message}}</h1>
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>Descpription</th>
+                    <th>Manufacture</th>
+                    <th>Price</th>
+                </tr>
+                <tr ng-repeat="product in products">
+                    <td>{{product.code}}</td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.desc}}</td>
+                    <td>{{product.manu}}</td>
+                    <td>{{product.price}}</td>                    
+                </tr>
+
+            </table>
+        </div>
+    </div>
+    <script>
+        var app = angular.module("productApp",[])
+        const url = "http://localhost:3000/api/product"
+        app.controller("productController",function($scope,$http){
+            $scope.message = ''
+            $scope.addProduct=function(){
+                $scope.message = ''
+                console.log('add product')
+                product={
+
+                    code:$scope.code,
+                    name:$scope.name,
+                    desc:$scope.desc,
+                    manu:$scope.manu,
+                    price:$scope.price
+                }
+                console.log(product)
+                $http.post(url,product)
+                .then(function(response){
+                   // $scope.message=response.data
+                   $scope.message='Product is saved'
+                }).catch(function(err){
+                    $scope.message='Error while saving.Try again'
+                })
+            }
+
+            $scope.displayProduct=function(){
+                $scope.message = ''
+                console.log('display product')
+                $http.get(url)
+                .then(function(response){
+                    $scope.products = response.data
+                })
+                .catch(function(err){
+                    $scope.products={}
+                })
+            }
+
+        })
+    </script>
+</body>
+</html>

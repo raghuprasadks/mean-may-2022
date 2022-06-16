@@ -1,0 +1,35 @@
+Agenda:
+MEAN - 
+Fullstack
+1. Develop backend API interfacing
+with DB
+2. Develop the frontend application
+3. Interface them using http
+
+steps.
+1. Create project2 folder
+2. create client and server folder
+inside project2
+3. cd server
+4. npm init
+5. install required packages
+npm i express
+cors
+
+6. create express app in index.js
+and api's
+7.Create product api 
+{
+	code
+	name
+	desc,
+	manu,	
+	price
+}
+
+api/product - get,post
+api/product/id - delete,update
+
+Create post and get api
+8. Create index.html in 
+client folder

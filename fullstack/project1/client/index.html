@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body ng-app="userApp">
+
+<div  ng-controller="userCtrl">
+<h1>User Registration</h1>
+Name: <input type="text" ng-model="name"><br>
+Mobile: <input type="text" ng-model="mobile"><br>
+EMail: <input type="text" ng-model="email"><br>
+Password: <input type="password" ng-model="password"><br>
+<button ng-click=register()>Register</button>
+<button ng-click=displayUsers()>Display Users</button>
+<div>{{message}}</div>
+<div>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>Email</th>
+            <th>Password</th>
+        </tr>
+        <tr ng-repeat="user in userdata">
+            <td>{{user.name}}</td>
+            <td>{{user.mobile}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.password}}</td>
+        </tr>
+
+
+
+    </table>
+</div>
+</div>
+
+<script>
+var app = angular.module('userApp', []);
+const url = 'http://localhost:3333/api/user'
+app.controller('userCtrl', function($scope,$http) {
+    $scope.message=''
+    $scope.register=function(){
+        $scope.message=''
+        console.log('register')
+        user={
+            name:$scope.name,
+            mobile:$scope.mobile,
+            email:$scope.email,
+            password:$scope.password
+
+        }
+        $http.post(url,user)
+        .then(function(response){
+            $scope.message='registration successful'
+        })
+        .catch(function (response){
+            $scope.message='registration failed.Try again'
+        })
+        console.log('user' +user)
+    }
+
+    $scope.displayUsers=function(){
+        console.log('displayUsers')
+        
+        $http.get(url)
+        .then(function(response){
+            $scope.userdata=response.data
+        })
+        
+    }
+    
+});
+</script>
+
+</body>
+</html>
