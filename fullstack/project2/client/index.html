@@ -25,7 +25,7 @@
             <button ng-click="displayProduct()">View Product</button>
             <h1>{{message}}</h1>
         </div>
-        <div>
+        <div ng-if="products.length>0">
             <table>
                 <tr>
                     <th>Code</th>
@@ -50,6 +50,7 @@
         const url = "http://localhost:3000/api/product"
         app.controller("productController",function($scope,$http){
             $scope.message = ''
+            $scope.products={}
             $scope.addProduct=function(){
                 $scope.message = ''
                 console.log('add product')
@@ -65,9 +66,12 @@
                 $http.post(url,product)
                 .then(function(response){
                    // $scope.message=response.data
-                   $scope.message='Product is saved'
+                 //  $scope.message='Product is saved'
+                  $scope.message=response.data.message
+
                 }).catch(function(err){
-                    $scope.message='Error while saving.Try again'
+                  //  $scope.message='Error while saving.Try again'
+                    $scope.message=err.data.message
                 })
             }
 
@@ -76,6 +80,7 @@
                 console.log('display product')
                 $http.get(url)
                 .then(function(response){
+                    console.log('response '+response.length)
                     $scope.products = response.data
                 })
                 .catch(function(err){
