@@ -33,3 +33,13 @@ api/product/id - delete,update
 Create post and get api
 8. Create index.html in 
 client folder
+
+Project 2
+https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose
+https://github.com/mdn/express-locallibrary-tutorial/
+Step:
+clone the project
+go to folder containing package.json 
+npm install
+nodemon ./bin/www
+
