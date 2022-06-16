@@ -41,5 +41,6 @@ Step:
 clone the project
 go to folder containing package.json 
 npm install
+npm run devstart
 nodemon ./bin/www
 
