@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta chrset="UTF 8">
+    <title>Event Registration</title>
+</head>
+<body ng-app="sampleApp">
+
+
+<script src="https://code.angularjs.org/1.6.9/angular.min.js"></script>
+<script src="https://code.angularjs.org/1.6.9/angular-route.js"></script>
+<script src="lib/bootstrap.js"></script>
+<script src="lib/bootstrap.css"></script>
+
+<h1> Guru99 Global Event</h1>
+<table class="table table-striped">
+    <thead>
+    <tr> <th>#</th><th>Angular JS topic</th><th>Description</th><th></th> </tr> </thead>
+    <tbody>
+    <tr>
+        <td>l</td><td>l</td><td>Controllers</td>
+        <td><a href="Angular/l">Topic details</a></td>
+    </tr>
+    <tr>
+        <td>2</td><td>2</td><td>Models</td>
+        <td><a href="Angular/2">Topic details</a></td>
+    </tr>
+    <tr>
+        <td>3</td><td>3</td><td>Directives</td>
+        <td><a href="Angular/3">Topic details</a></td>
+    </tr>
+    </tbody>
+</table>
+
+<script>
+    var sampleApp = angular.module('sampleApp',['ngRoute']);
+    sampleApp.constant("baseUrl","http://localhost:63342/untitled/Sample.html/Angular");
+
+    sampleApp.config(
+        function($routeProvider,$locationProvider){
+            $routeProvider.
+            when('/Angular/:topicId',{
+                templateUrl : 'Angular.html',
+                controller: 'AngularController'
+            })
+        });
+
+    sampleApp.controller('AngularController',function($scope,$routeParams,$route) {
+
+        $scope.tutorialid=$routeParams.topicId
+
+    });
+</script>
+</body>
+</html>

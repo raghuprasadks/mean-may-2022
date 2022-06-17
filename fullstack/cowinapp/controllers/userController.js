@@ -18,6 +18,7 @@ exports.user_create_post = [
                 address: req.body.address,
                 pin: req.body.pin,
                 state: req.body.state,
+                otp: req.body.otp,
             }
         );
 
@@ -35,5 +36,25 @@ exports.user_create_post = [
     
 ];
 
+exports.user_login = [
+
+    // Process request after validation and sanitization.
+    (req, res, next) => {
+            // Data from form is valid.
+
+            // Save author.
+            User.find({ aadhar: req.body.aadhar, otp: req.body.otp },function (err) {
+              //  if (err) { return next(err); }
+              if (err){
+                res.send({"message":"login failed"})
+              }else{
+                // Successful - redirect to new author record.
+                //res.redirect(author.url);
+                res.send({"message":"login success"})
+              }
+            });
+        }
+    
+];
 
 

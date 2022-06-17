@@ -9,7 +9,8 @@ var UserSchema = new Schema({
   mobile: { type: Number, required: true, maxLength: 10 },
   address: { type: String, required: true, maxLength: 200 },
   pin: { type: Number, required: true, maxLength: 6 },
-  state: { type: String, required: true, maxLength: 100 }
+  state: { type: String, required: true, maxLength: 100 },
+  otp: { type: Number, required: true, maxLength: 6 }
 });
 
 
