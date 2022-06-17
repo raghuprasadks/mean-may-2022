@@ -1,0 +1,30 @@
+Waterfall model,Agile
+SADTMC
+S-System Engineering
+A - Analysis
+D - Design
+C - Coding
+T - Testing
+M - Maintenance
+
+Fullstack application
+1. Requirements gathering
+Simulating cowin app
+1. Registration
+2. Login
+3. Slot booking
+4. Get vaccination
+5. Dashboard
+6. Vaccination Status
+
+2. Design
+
+Backend API design
+model design
+Front end UI
+
+3. Coding
+4. Testing
+5. Deployement
+
+

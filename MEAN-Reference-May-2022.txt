@@ -4,3 +4,9 @@ https://www.simform.com/blog/web-application-architecture/#:~:text=Web%20applica
 https://www.slideshare.net/vmahima/training-on-angular-js
 https://www.freecodecamp.org/news/mongoose101/
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose
+https://github.com/abhimanbhau/eCommerce-website-MEAN
+https://jasonwatmore.com/post/2015/03/10/angularjs-user-registration-and-login-example-tutorial
+https://jasonwatmore.com/post/2015/12/09/mean-stack-user-registration-and-login-example-tutorial
+
+
+
