@@ -7,6 +7,8 @@ https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoo
 https://github.com/abhimanbhau/eCommerce-website-MEAN
 https://jasonwatmore.com/post/2015/03/10/angularjs-user-registration-and-login-example-tutorial
 https://jasonwatmore.com/post/2015/12/09/mean-stack-user-registration-and-login-example-tutorial
+https://idkblogs.com/angular/11/Serve-angularJs-application-by-Node-server.#:~:text=Let's%20get%20started,our%20angularJs%20app%20will%20run.
+https://www.c-sharpcorner.com/blogs/deploy-angularjs-web-app-with-nodejs
 
 
 

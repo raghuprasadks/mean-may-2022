@@ -8,6 +8,7 @@ exports.user_create_post = [
 
     // Process request after validation and sanitization.
     (req, res, next) => {
+      console.log('backend :create user')
 
         // Create Author object with escaped and trimmed data
         var user = new User(
@@ -41,16 +42,16 @@ exports.user_login = [
     // Process request after validation and sanitization.
     (req, res, next) => {
             // Data from form is valid.
-
+      console.log("user login backend")
             // Save author.
-            User.find({ aadhar: req.body.aadhar, otp: req.body.otp },function (err) {
+            User.findOne({ aadhar: req.body.aadhar, otp: req.body.otp },function (err,data) {
+              console.log("data##",data)
               //  if (err) { return next(err); }
-              if (err){
-                res.send({"message":"login failed"})
+              if(data!=null){
+                res.send({success:true})
               }else{
-                // Successful - redirect to new author record.
-                //res.redirect(author.url);
-                res.send({"message":"login success"})
+                res.send({success:false,message:'Aadhar or otp is incorrect'})
+                
               }
             });
         }

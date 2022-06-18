@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path')
+const cors = require('cors')
 const app = express()
 const port = 3000
 var usersRouter = require('./routes/userRoute');
@@ -16,19 +17,13 @@ mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+app.use(cors())
 app.use(express.json());
-//express.static(path.join(__dirname, '/public'));
-/**
-app.get('*', function (req, res) {
-    res.sendFile(path.join(__dirname, '/public','/index.html'));
-});
-
-app.get('/',(req,res)=>{
-
-    res.send('Cowin')
-})
- */
-
+app.use(express.static("App"));  
+  
+app.get('/', function (req, res) {  
+    res.redirect('/');  
+}); 
 
 //app.use('/', indexRouter);
 app.use('/api', usersRouter);
