@@ -19,7 +19,9 @@
         function login() {
             vm.dataLoading = true;
             AuthenticationService.Login(vm.aadhar, vm.otp, function (response) {
-                if (response.success) {
+                console.log('response::',response)
+                console.log('response::data',response.data)
+                if (response.data.success) {
                     AuthenticationService.SetCredentials(vm.aadhar, vm.otp);
                     $location.path('/');
                 } else {
